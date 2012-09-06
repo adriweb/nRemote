@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: nRemote
+Class-Path: commproxy.jar navnet.jar navnetcommproxy.jar upgrade.jar Java/commproxy.jar Java/navnet.jar Java/navnetcommproxy.jar Java/upgrade.jar lib/commproxy.jar lib/navnet.jar lib/navnetcommproxy.jar lib/upgrade.jar lib/commproxy/commproxy.jar lib/commproxy/navnetcommproxy.jar file:///C:/Program%20Files/Fichiers%20Communs/TI%20Shared/CommLib/2/NavNet/navnet.jar file:///C:/Program%20Files%20(x86)/Common%20Files/TI%20Shared/CommLib/2/NavNet/navnet.jar
