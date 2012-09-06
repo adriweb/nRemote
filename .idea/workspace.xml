@@ -71,7 +71,7 @@
       <file leaf-file-name="nRemote.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nRemote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="29" selection-start="2371" selection-end="2371" vertical-scroll-proportion="0.0">
+            <state line="44" column="0" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="Remote.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Remote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="23" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.0">
+            <state line="65" column="20" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="NspireKeyboard.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NspireKeyboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2574" column="11" selection-start="114637" selection-end="114637" vertical-scroll-proportion="0.0">
+            <state line="2647" column="48" selection-start="117427" selection-end="117427" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4289#4319#0" expanded="true" />
@@ -263,7 +263,18 @@
       <file leaf-file-name="ScreenFrame.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ScreenFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="204" selection-end="204" vertical-scroll-proportion="0.10431154">
+            <state line="35" column="45" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.3809524">
+              <folding>
+                <element signature="e#1884#1914#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nServer.c" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/nServer_002beta/nServer.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="134" column="17" selection-start="4972" selection-end="4980" vertical-scroll-proportion="0.42307693">
               <folding />
             </state>
           </provider>
@@ -297,10 +308,11 @@
         <option value="$PROJECT_DIR$/src/DeviceSelectionFrame.java" />
         <option value="$PROJECT_DIR$/src/ImportantReadme.txt" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-        <option value="$PROJECT_DIR$/src/ScreenFrame.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/NspireKeyboard.java" />
         <option value="$PROJECT_DIR$/src/Remote.java" />
+        <option value="$USER_HOME$/Downloads/nServer_002beta/nServer.c" />
+        <option value="$PROJECT_DIR$/src/ScreenFrame.java" />
       </list>
     </option>
   </component>
@@ -573,6 +585,14 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="CppRunConfigurationType" factoryName="Cpp">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -672,13 +692,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Kahlua" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32822084" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22061966" sideWeight="0.47341514" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22061966" sideWeight="0.41615543" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22061966" sideWeight="0.2822086" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23721881" sideWeight="0.4957265" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22061966" sideWeight="0.24846625" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23721881" sideWeight="0.4957265" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.22205207" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -747,11 +767,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/src/lib/commproxy.jar!/com/ti/et/education/commproxy/NspireVirtualKeyStroke.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="415" column="36" selection-start="23702" selection-end="23702" vertical-scroll-proportion="0.6099291" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/lib/commproxy.jar!/com/ti/et/education/commproxy/INodeInfo.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="17" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.5319149" />
@@ -760,11 +775,6 @@
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/javax/swing/JComboBox.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="86" column="16" selection-start="3543" selection-end="3543" vertical-scroll-proportion="0.33278957" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeviceSelectionFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="14" selection-start="637" selection-end="637" vertical-scroll-proportion="0.3670473" />
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/javax/swing/ImageIcon.class">
@@ -809,9 +819,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Remote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="20" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nRemote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DeviceSelectionFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="5" selection-start="8465" selection-end="8465" vertical-scroll-proportion="3.1905425">
+          <folding>
+            <element signature="e#8556#8565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NspireKeyboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2574" column="11" selection-start="114637" selection-end="114637" vertical-scroll-proportion="0.0">
+        <state line="2647" column="48" selection-start="117427" selection-end="117427" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4289#4319#0" expanded="true" />
@@ -981,24 +1014,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Remote.java">
+    <entry file="file://$USER_HOME$/Downloads/nServer_002beta/nServer.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="23" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/nRemote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="29" selection-start="2371" selection-end="2371" vertical-scroll-proportion="0.0">
+        <state line="134" column="17" selection-start="4972" selection-end="4980" vertical-scroll-proportion="0.42307693">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ScreenFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="204" selection-end="204" vertical-scroll-proportion="0.10431154">
-          <folding />
+        <state line="35" column="45" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.3809524">
+          <folding>
+            <element signature="e#1884#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

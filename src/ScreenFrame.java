@@ -28,6 +28,18 @@ public class ScreenFrame extends javax.swing.JFrame {
         }
     }
 
+    public void scanScreen() {
+        BufferedImage image = (BufferedImage) SCREEN.getIcon();
+        int clr=  image.getRGB(100,40);
+       // Color c = new Color(image.getRGB(x, y));
+        int  red   = (clr & 0x00ff0000) >> 16;
+        int  green = (clr & 0x0000ff00) >> 8;
+        int  blue  =  clr & 0x000000ff;
+        System.out.println("Red Color value = "+ red);
+        System.out.println("Green Color value = "+ green);
+        System.out.println("Blue Color value = "+ blue);
+    }
+
     private ImageIcon scale(Image src, float ratio) {
         int w = (int) (ratio * src.getWidth(this));
         int h = (int) (ratio * src.getHeight(this));
