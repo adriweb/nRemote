@@ -1,20 +1,12 @@
 nRemote v1.7 (Sept 5th, 2012)
+
 Authors : Adriweb, Levak
+
 http://tiplanet.org
-
-
-I - About
-II - How to install
-III - How to use
-IV - Known bugs
-V - Changelog
-VI - License
-
 
 
 #I - About : 
 -----------
-
 nRemote is a Java program designed to remote control one or multiple TI-Nspire handhelds when connected to your PC or Mac, whether directly via USB, or via the Navigator Wireless system.
 nRemote also features sequence recording and playing in order to easily execute a set of key presses.
 nRemote can be used for educational purpose in order to synchronise every student's handheld state or by showing a demonstration for a program...
@@ -22,9 +14,9 @@ nRemote can be used for educational purpose in order to synchronise every studen
 
 #II - How to install :
 ---------------------
-1) Install Java JRE 1.6 (or later) if your system doesn't have it already.
-2) You may have installed any 3.2 version of TI-Nspire Computer Software, Navigator or not, Teacher or Student does not matter. (Computer Link 3.2 should work but is less recommanded) before using nRemote. This in fact restrains the usage of nRemote to PC and Mac users only. Linux users may find workarounds with WINE.
-3) * PC : 
+1. Install Java JRE 1.6 (or later) if your system doesn't have it already.
+2. You may have installed any 3.2 version of TI-Nspire Computer Software, Navigator or not, Teacher or Student does not matter. (Computer Link 3.2 should work but is less recommanded) before using nRemote. This in fact restrains the usage of nRemote to PC and Mac users only. Linux users may find workarounds with WINE.
+3. * PC : 
 Copy and paste the file "nRemote.jar" to the folder that contains your TI-Nspire family computer software (for example in C:\Program Files (x86)\TI Education\TI-Nspire CAS Teacher Software\).
 
    * Mac :
@@ -33,8 +25,8 @@ Copy and paste the file "nRemote.jar" to the Resources folder inside of your TI-
 
 #III - How to use :
 ------------------
- * PC : 	1) *Launch your TI-Nspire family computer software FIRST*
-		2) Open "nRemote.jar"
+ * PC : 	1. *Launch your TI-Nspire family computer software FIRST*
+		2. Open "nRemote.jar"
 	
  * Mac :	Open "nRemote.jar"
 		
@@ -67,6 +59,7 @@ It can be interesting to create a shortcut of "nRemote.jar" anywhere you want
 - v1.4 : *Public* Error msg fixed. Drag and Drop transfer any files. Calculator target(s) selection. Fixed the missing 1.6 java target flag.
 - v1.5 : *Public* Read devices selection done. Application icon added. Overall code cleaned.
 - v1.6 : *Public* Screen auto-scaling when the window is being resized.
+- v1.7 : *Public* Separate Screen Frame with good screen scaling !
 
 Future :
 - Internal Sequence Editor
