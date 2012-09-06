@@ -11,4 +11,8 @@ src/lib/upgrade.jar
 
 src/.DS_Store
 
+out/production
+
+.idea/workspace.xml
+
 .DS_Store
