@@ -11,6 +11,7 @@ nRemote is a Java program designed to remote control one or multiple TI-Nspire h
 nRemote also features sequence recording and playing in order to easily execute a set of key presses.
 nRemote can be used for educational purpose in order to synchronise every student's handheld state or by showing a demonstration for a program...
 
+![Overall preview](http://i.imgur.com/IhVB1.jpg)
 
 #II - How to install :
 ---------------------
