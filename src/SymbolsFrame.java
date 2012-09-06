@@ -1,5 +1,4 @@
-
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /*
  * To change this template, choose Tools | Templates
@@ -7,7 +6,6 @@ import javax.swing.ImageIcon;
  */
 
 /**
- *
  * @author Levak
  */
 public class SymbolsFrame extends javax.swing.JFrame {
@@ -137,37 +135,37 @@ public class SymbolsFrame extends javax.swing.JFrame {
 
         BACKSLASH.setFont(new java.awt.Font("TI-Nspire Sans", 0, 12)); // NOI18N
         BACKSLASH.setText("\\");
-            BACKSLASH.setMargin(new java.awt.Insets(2, 0, 2, 0));
-            BACKSLASH.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    BACKSLASHActionPerformed(evt);
-                }
-            });
-            jPanel1.add(BACKSLASH);
+        BACKSLASH.setMargin(new java.awt.Insets(2, 0, 2, 0));
+        BACKSLASH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BACKSLASHActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BACKSLASH);
 
-            PERCENT.setFont(new java.awt.Font("TI-Nspire Sans", 0, 12)); // NOI18N
-            PERCENT.setText("%");
-            PERCENT.setMargin(new java.awt.Insets(2, 0, 2, 0));
-            PERCENT.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    PERCENTActionPerformed(evt);
-                }
-            });
-            jPanel1.add(PERCENT);
+        PERCENT.setFont(new java.awt.Font("TI-Nspire Sans", 0, 12)); // NOI18N
+        PERCENT.setText("%");
+        PERCENT.setMargin(new java.awt.Insets(2, 0, 2, 0));
+        PERCENT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PERCENTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(PERCENT);
 
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
-            layout.setHorizontalGroup(
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-            );
-            layout.setVerticalGroup(
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            );
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
-            pack();
-        }// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
     private void QMARKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QMARKActionPerformed
         sendEvent("?");
@@ -216,7 +214,8 @@ public class SymbolsFrame extends javax.swing.JFrame {
     private void sendEvent(String keyStr) {
         try {
             Remote.sendEvent(keyStr);
-        } catch (Exception e) { }
+        } catch (Exception e) {
+        }
         this.setVisible(false);
     }
 
@@ -254,6 +253,7 @@ public class SymbolsFrame extends javax.swing.JFrame {
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BACKSLASH;
     private javax.swing.JButton COLON;

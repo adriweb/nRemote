@@ -19,7 +19,6 @@ import java.util.Calendar;
  */
 
 /**
- *
  * @author Levak
  */
 public class NspireKeyboard extends javax.swing.JFrame {
@@ -37,6 +36,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
     private DeviceSelectionFrame deviceSelectionFrame = null;
     private boolean isRecording = false;
     private String currentSequence = "";
+
     public NspireKeyboard(boolean noScreenshots) {
         this.trigFrame = new TrigFrame();
         this.piFrame = new PiFrame();
@@ -48,7 +48,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
         STOP.setVisible(false);
         SCREEN.setIcon(new ImageIcon(Screen.generateLoadingScreen("LOADING ...")));
         this.noScreen.setSelected(noScreenshots);
-        
+
         new DropTarget(this, new MyDragDropListener());
         ImageIcon icn = new ImageIcon(getClass().getResource("nremote.png"));
         this.setIconImage(icn.getImage());
@@ -75,13 +75,13 @@ public class NspireKeyboard extends javax.swing.JFrame {
                         java.util.List<File> files = (java.util.List<File>) transferable.getTransferData(flavor);
 
                         for (File file : files) {
-                            String destPath = file.getName() + (file.getName().endsWith(".tns") ? "" :".tns");
-                            if(ALL.isSelected()) {
+                            String destPath = file.getName() + (file.getName().endsWith(".tns") ? "" : ".tns");
+                            if (ALL.isSelected()) {
                                 for (INodeID nodeID : Remote.theCalcs) {
-                                   Remote.sendFile(nodeID, file.getPath(), destPath);                                  
+                                    Remote.sendFile(nodeID, file.getPath(), destPath);
                                 }
                             } else {
-                                for(INodeID nodeID : getSelectedDevices()) {
+                                for (INodeID nodeID : getSelectedDevices()) {
                                     Remote.sendFile(nodeID, file.getPath(), destPath);
                                 }
                             }
@@ -96,15 +96,22 @@ public class NspireKeyboard extends javax.swing.JFrame {
         }
 
         @Override
-        public void dragEnter(DropTargetDragEvent dtde) { }
+        public void dragEnter(DropTargetDragEvent dtde) {
+        }
+
         @Override
-        public void dragOver(DropTargetDragEvent dtde) { }
+        public void dragOver(DropTargetDragEvent dtde) {
+        }
+
         @Override
-        public void dropActionChanged(DropTargetDragEvent dtde) { }
+        public void dropActionChanged(DropTargetDragEvent dtde) {
+        }
+
         @Override
-        public void dragExit(DropTargetEvent dte) { }
+        public void dragExit(DropTargetEvent dte) {
+        }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -237,10 +244,8 @@ public class NspireKeyboard extends javax.swing.JFrame {
         LOAD = new javax.swing.JButton();
         tiplanet = new javax.swing.JLabel();
 
-        SCREEN.addMouseListener(new MouseAdapter()
-        {
-            public void mouseReleased(MouseEvent e)
-            {
+        SCREEN.addMouseListener(new MouseAdapter() {
+            public void mouseReleased(MouseEvent e) {
                 screenFrame.setVisible(true);
             }
         });
@@ -348,12 +353,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel8_voidLayout = new javax.swing.GroupLayout(jPanel8_void);
         jPanel8_void.setLayout(jPanel8_voidLayout);
         jPanel8_voidLayout.setHorizontalGroup(
-            jPanel8_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+                jPanel8_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 40, Short.MAX_VALUE)
         );
         jPanel8_voidLayout.setVerticalGroup(
-            jPanel8_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
+                jPanel8_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 102, Short.MAX_VALUE)
         );
 
         top.add(jPanel8_void);
@@ -374,12 +379,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel4_voidLayout = new javax.swing.GroupLayout(jPanel4_void);
         jPanel4_void.setLayout(jPanel4_voidLayout);
         jPanel4_voidLayout.setHorizontalGroup(
-            jPanel4_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+                jPanel4_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 48, Short.MAX_VALUE)
         );
         jPanel4_voidLayout.setVerticalGroup(
-            jPanel4_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
+                jPanel4_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 34, Short.MAX_VALUE)
         );
 
         left.add(jPanel4_void);
@@ -408,12 +413,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel3_voidLayout = new javax.swing.GroupLayout(jPanel3_void);
         jPanel3_void.setLayout(jPanel3_voidLayout);
         jPanel3_voidLayout.setHorizontalGroup(
-            jPanel3_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+                jPanel3_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 48, Short.MAX_VALUE)
         );
         jPanel3_voidLayout.setVerticalGroup(
-            jPanel3_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
+                jPanel3_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 34, Short.MAX_VALUE)
         );
 
         left.add(jPanel3_void);
@@ -502,12 +507,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel5_voidLayout = new javax.swing.GroupLayout(jPanel5_void);
         jPanel5_void.setLayout(jPanel5_voidLayout);
         jPanel5_voidLayout.setHorizontalGroup(
-            jPanel5_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+                jPanel5_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 48, Short.MAX_VALUE)
         );
         jPanel5_voidLayout.setVerticalGroup(
-            jPanel5_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
+                jPanel5_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 34, Short.MAX_VALUE)
         );
 
         right.add(jPanel5_void);
@@ -536,12 +541,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel6_voidLayout = new javax.swing.GroupLayout(jPanel6_void);
         jPanel6_void.setLayout(jPanel6_voidLayout);
         jPanel6_voidLayout.setHorizontalGroup(
-            jPanel6_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+                jPanel6_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 48, Short.MAX_VALUE)
         );
         jPanel6_voidLayout.setVerticalGroup(
-            jPanel6_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
+                jPanel6_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 34, Short.MAX_VALUE)
         );
 
         right.add(jPanel6_void);
@@ -556,12 +561,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel7_voidLayout = new javax.swing.GroupLayout(jPanel7_void);
         jPanel7_void.setLayout(jPanel7_voidLayout);
         jPanel7_voidLayout.setHorizontalGroup(
-            jPanel7_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+                jPanel7_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 40, Short.MAX_VALUE)
         );
         jPanel7_voidLayout.setVerticalGroup(
-            jPanel7_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
+                jPanel7_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 102, Short.MAX_VALUE)
         );
 
         top.add(jPanel7_void);
@@ -679,14 +684,14 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout ctrlLayout = new javax.swing.GroupLayout(ctrl);
         ctrl.setLayout(ctrlLayout);
         ctrlLayout.setHorizontalGroup(
-            ctrlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ctrlLayout.createSequentialGroup()
-                .addComponent(CTRL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, Short.MAX_VALUE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                ctrlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ctrlLayout.createSequentialGroup()
+                                .addComponent(CTRL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, Short.MAX_VALUE)
+                                .addContainerGap(30, Short.MAX_VALUE))
         );
         ctrlLayout.setVerticalGroup(
-            ctrlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CTRL, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                ctrlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(CTRL, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
         );
 
         left_side.add(ctrl);
@@ -928,12 +933,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 45, Short.MAX_VALUE)
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 45, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 27, Short.MAX_VALUE)
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 27, Short.MAX_VALUE)
         );
 
         middle_side.add(jPanel1);
@@ -1243,14 +1248,14 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout delLayout = new javax.swing.GroupLayout(del);
         del.setLayout(delLayout);
         delLayout.setHorizontalGroup(
-            delLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(DEL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, Short.MAX_VALUE))
+                delLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delLayout.createSequentialGroup()
+                                .addContainerGap(30, Short.MAX_VALUE)
+                                .addComponent(DEL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, Short.MAX_VALUE))
         );
         delLayout.setVerticalGroup(
-            delLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DEL, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                delLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(DEL, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
         );
 
         right_side.add(del);
@@ -1976,12 +1981,12 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout ALPHA_voidLayout = new javax.swing.GroupLayout(ALPHA_void);
         ALPHA_void.setLayout(ALPHA_voidLayout);
         ALPHA_voidLayout.setHorizontalGroup(
-            ALPHA_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 26, Short.MAX_VALUE)
+                ALPHA_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 26, Short.MAX_VALUE)
         );
         ALPHA_voidLayout.setVerticalGroup(
-            ALPHA_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 23, Short.MAX_VALUE)
+                ALPHA_voidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 23, Short.MAX_VALUE)
         );
 
         alpha.add(ALPHA_void);
@@ -2234,36 +2239,36 @@ public class NspireKeyboard extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(digit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(screen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(alpha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(bottom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(top, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(digit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(screen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(alpha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bottom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(top, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(screen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(top, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(digit, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(alpha, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(screen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(top, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(digit, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(alpha, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -2332,7 +2337,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
     }//GEN-LAST:event_DELActionPerformed
 
     private void sendSelf(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendSelf
-        sendEvent(((javax.swing.JButton)evt.getSource()).getText());
+        sendEvent(((javax.swing.JButton) evt.getSource()).getText());
     }//GEN-LAST:event_sendSelf
 
     private void EXPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXPActionPerformed
@@ -2346,7 +2351,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
     private void TRIGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGActionPerformed
         this.trigFrame.setVisible(true);
         Point p = TRIG.getLocationOnScreen();
-        this.trigFrame.setLocation(p.x-10, p.y-40);
+        this.trigFrame.setLocation(p.x - 10, p.y - 40);
         RefreshSreen();
     }//GEN-LAST:event_TRIGActionPerformed
 
@@ -2373,25 +2378,25 @@ public class NspireKeyboard extends javax.swing.JFrame {
     private void fromKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fromKeyPressed
         int code = evt.getKeyCode();
         //System.out.println(code + " " + evt);
-        if(evt.isShiftDown()) {
+        if (evt.isShiftDown()) {
             Shift_state = true;
         }
-        if(evt.isControlDown()) { 
+        if (evt.isControlDown()) {
             Ctrl_state = true;
         }
-        if(code == KeyEvent.VK_ESCAPE) {
+        if (code == KeyEvent.VK_ESCAPE) {
             ESCActionPerformed(null);
-        } else if(code == KeyEvent.VK_ENTER) {
+        } else if (code == KeyEvent.VK_ENTER) {
             ENTERActionPerformed(null);
-        } else if(code == KeyEvent.VK_BACK_SPACE) {
+        } else if (code == KeyEvent.VK_BACK_SPACE) {
             DELActionPerformed(null);
-        } else if(code == KeyEvent.VK_LEFT) {
+        } else if (code == KeyEvent.VK_LEFT) {
             LEFTActionPerformed(null);
-        } else if(code == KeyEvent.VK_RIGHT) {
+        } else if (code == KeyEvent.VK_RIGHT) {
             RIGHTActionPerformed(null);
-        } else if(code == KeyEvent.VK_UP) {
+        } else if (code == KeyEvent.VK_UP) {
             UPActionPerformed(null);
-        } else if(code == KeyEvent.VK_DOWN) {
+        } else if (code == KeyEvent.VK_DOWN) {
             DOWNActionPerformed(null);
         } else if (code == KeyEvent.VK_TAB) {
             TABActionPerformed(null);
@@ -2407,11 +2412,10 @@ public class NspireKeyboard extends javax.swing.JFrame {
             CTRLActionPerformed(null);
         } else {
             //System.out.println(KeyEvent.getKeyText(code));
-            if(code != KeyEvent.VK_SHIFT && code != KeyEvent.VK_CONTROL) {
-                if(Ctrl_state) {
+            if (code != KeyEvent.VK_SHIFT && code != KeyEvent.VK_CONTROL) {
+                if (Ctrl_state) {
                     sendEvent(KeyEvent.getKeyText(code).toLowerCase());
-                }
-                else {
+                } else {
                     sendEvent(Character.toString(evt.getKeyChar()));
                 }
             }
@@ -2431,7 +2435,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
     }//GEN-LAST:event_ALPHA_EEActionPerformed
 
     private void sendSelfAlpha(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendSelfAlpha
-        sendEvent(((javax.swing.JButton)evt.getSource()).getText().toLowerCase());
+        sendEvent(((javax.swing.JButton) evt.getSource()).getText().toLowerCase());
     }//GEN-LAST:event_sendSelfAlpha
 
     private void ALPHA_SPACEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALPHA_SPACEActionPerformed
@@ -2441,14 +2445,14 @@ public class NspireKeyboard extends javax.swing.JFrame {
     private void ALPHA_PIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALPHA_PIActionPerformed
         this.piFrame.setVisible(true);
         Point p = ALPHA_PI.getLocationOnScreen();
-        this.piFrame.setLocation(p.x-10, p.y-40);
+        this.piFrame.setLocation(p.x - 10, p.y - 40);
         RefreshSreen();
     }//GEN-LAST:event_ALPHA_PIActionPerformed
 
     private void ALPHA_HELPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALPHA_HELPActionPerformed
         this.symbolsFrame.setVisible(true);
         Point p = ALPHA_HELP.getLocationOnScreen();
-        this.symbolsFrame.setLocation(p.x-10, p.y-40);
+        this.symbolsFrame.setLocation(p.x - 10, p.y - 40);
         RefreshSreen();
     }//GEN-LAST:event_ALPHA_HELPActionPerformed
 
@@ -2473,7 +2477,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
             BufferedWriter oFile = null;
             try {
 
-                String sequenceName = (String)JOptionPane.showInputDialog(
+                String sequenceName = (String) JOptionPane.showInputDialog(
                         null,
                         "Sequence Name ?",
                         "nRemote Sequence Saving",
@@ -2481,7 +2485,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
                 if ((sequenceName != null) && (sequenceName.length() > 0)) {
                     sequenceName = sequenceName.trim();
                 } else {
-                    sequenceName = "nRemoteSequence-" + (Calendar.getInstance().getTime().toString()).substring(0,19).replace(" ","_").replace(":","-").trim();
+                    sequenceName = "nRemoteSequence-" + (Calendar.getInstance().getTime().toString()).substring(0, 19).replace(" ", "_").replace(":", "-").trim();
                 }
 
                 oFile = new BufferedWriter(new OutputStreamWriter(
@@ -2540,7 +2544,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
 
             if (nbr > 50) {
                 JDialog.setDefaultLookAndFeelDecorated(true);
-                int response = JOptionPane.showConfirmDialog(null, "This file has "+nbr+" instructions. Are you sure you want to continue ?", "nRemote - Sequence Launcher",
+                int response = JOptionPane.showConfirmDialog(null, "This file has " + nbr + " instructions. Are you sure you want to continue ?", "nRemote - Sequence Launcher",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.NO_OPTION) {
                     return;
@@ -2572,19 +2576,18 @@ public class NspireKeyboard extends javax.swing.JFrame {
             setSize(new Dimension(getWidth(), getHeight()));
             screenFrame.setVisible(true);
         } else {
-            setSize(new Dimension(getWidth(), getHeight()-SCREENlastheight));
+            setSize(new Dimension(getWidth(), getHeight() - SCREENlastheight));
             screenFrame.setVisible(false);
         }
     }//GEN-LAST:event_noScreenActionPerformed
 
     private void EQUALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EQUALActionPerformed
-        if(Ctrl_state) {
+        if (Ctrl_state) {
             this.conditionFrame.setVisible(true);
             Point p = EQUAL.getLocationOnScreen();
-            this.conditionFrame.setLocation(p.x-10, p.y-40);
+            this.conditionFrame.setLocation(p.x - 10, p.y - 40);
             RefreshSreen();
-        }
-        else {
+        } else {
             sendEvent("=");
         }
     }//GEN-LAST:event_EQUALActionPerformed
@@ -2596,40 +2599,40 @@ public class NspireKeyboard extends javax.swing.JFrame {
     private void ALLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALLActionPerformed
         this.deviceSelectionFrame.setVisible(false);
     }//GEN-LAST:event_ALLActionPerformed
-    
+
     private void sendArrowKey(String keyStr) {
-        if(Shift_state == true) {
+        if (Shift_state == true) {
             keyStr = "hold_" + keyStr;
         }
         sendEvent("~" + keyStr + "~");
     }
-    
+
     private void sendEvent(String keyStr) {
         try {
-            if(Ctrl_state == true) {
-                if(keyStr.charAt(0) == '~') {
+            if (Ctrl_state == true) {
+                if (keyStr.charAt(0) == '~') {
                     keyStr = keyStr.replace("~", "");
                 }
                 keyStr = "~ctrl_" + keyStr + "~";
                 Ctrl_state = false;
-            }else if(Shift_state == true) {
-                if(keyStr.charAt(0) == '~') {
-                    keyStr = "~shift_"+keyStr.replace("~", "")+"~";
-                }
-                else {
+            } else if (Shift_state == true) {
+                if (keyStr.charAt(0) == '~') {
+                    keyStr = "~shift_" + keyStr.replace("~", "") + "~";
+                } else {
                     keyStr = keyStr.toUpperCase();
                 }
                 Shift_state = false;
             }
             //System.out.println(keyStr);
-            if(ALL.isSelected()) {
+            if (ALL.isSelected()) {
                 Remote.sendEvent(keyStr);
             } else {
-                for(INodeID nodeID : this.getSelectedDevices()) {
+                for (INodeID nodeID : this.getSelectedDevices()) {
                     Remote.sendEvent(keyStr, nodeID);
                 }
             }
-        } catch (Exception e) { }
+        } catch (Exception e) {
+        }
 
         if (isRecording == true) {
             if (keyStr.charAt(0) == '~') {
@@ -2640,20 +2643,22 @@ public class NspireKeyboard extends javax.swing.JFrame {
         }
         RefreshSreen();
     }
-    
+
     public INodeID[] getSelectedDevices() {
         return this.deviceSelectionFrame.getSelectedItems();
     }
-    
+
     public int getNumberSelectedDevices() {
         INodeID[] nodes = getSelectedDevices();
-        if(nodes == null) { return 0; }
+        if (nodes == null) {
+            return 0;
+        }
         return nodes.length;
     }
-     
+
     public void updateFields() {
         int number = Remote.getNumberOfDevices();
-        if(number > 0) {
+        if (number > 0) {
             this.setTitle("nRemote - " + number + " device" + (number > 1 ? "s" : "") + " connected");
         } else {
             this.setTitle("nRemote - No device connected");
@@ -2666,7 +2671,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
         if (Remote.getNumberOfDevices() > 0) {
             if (!this.noScreen.isSelected()) {
                 try {
-                    if(ALL.isSelected()) {
+                    if (ALL.isSelected()) {
                         icn = new ImageIcon(Remote.getScreen(Remote.theCalcs[0]));
                     } else {
                         INodeID[] tbl = getSelectedDevices();
@@ -2680,9 +2685,10 @@ public class NspireKeyboard extends javax.swing.JFrame {
                             icn = new ImageIcon(Screen.generateErrorScreen("SELECT A DEVICE !"));
                         }
                     }
-                } catch (Exception ignored) { }
+                } catch (Exception ignored) {
+                }
             }
-        } else {    
+        } else {
             icn = new ImageIcon(Screen.generateErrorScreen("CONNECT A DEVICE !"));
         }
 
@@ -2700,8 +2706,8 @@ public class NspireKeyboard extends javax.swing.JFrame {
     }
 
     private ImageIcon scale(Image src, float scale) {
-        int w = (int)(scale*src.getWidth(this));
-        int h = (int)(scale*src.getHeight(this));
+        int w = (int) (scale * src.getWidth(this));
+        int h = (int) (scale * src.getHeight(this));
         int type = BufferedImage.TYPE_INT_RGB;
         BufferedImage dst = new BufferedImage(w, h, type);
         Graphics2D g2 = dst.createGraphics();
@@ -2711,10 +2717,17 @@ public class NspireKeyboard extends javax.swing.JFrame {
     }
 
     public void updateDeviceList() {
-        try { Remote.connect(); } catch (Exception e) { };
-        if (Remote.theCalcs == null) { return; }
+        try {
+            Remote.connect();
+        } catch (Exception e) {
+        }
+        ;
+        if (Remote.theCalcs == null) {
+            return;
+        }
         this.deviceSelectionFrame.updateItems();
     }
+
     // <editor-fold defaultstate="collapsed" desc="Variables declaration - do not modify">
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ALL;

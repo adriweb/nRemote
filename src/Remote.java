@@ -57,7 +57,7 @@ public class Remote {
 
     static INodeInfo getDeviceInfo(INodeID nodeID) {
         try {
-            return nncp.getNodeInfo(nodeID); 
+            return nncp.getNodeInfo(nodeID);
         } catch (Exception e) {
             return null;
         }

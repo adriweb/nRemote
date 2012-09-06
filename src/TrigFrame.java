@@ -1,5 +1,4 @@
-
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /*
  * To change this template, choose Tools | Templates
@@ -7,7 +6,6 @@ import javax.swing.ImageIcon;
  */
 
 /**
- *
  * @author Levak
  */
 public class TrigFrame extends javax.swing.JFrame {
@@ -104,12 +102,12 @@ public class TrigFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -142,7 +140,8 @@ public class TrigFrame extends javax.swing.JFrame {
     private void sendEvent(String keyStr) {
         try {
             Remote.sendEvent(keyStr);
-        } catch (Exception e) { }
+        } catch (Exception e) {
+        }
         this.setVisible(false);
     }
 
@@ -180,6 +179,7 @@ public class TrigFrame extends javax.swing.JFrame {
             }
         });
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ACOS;
     private javax.swing.JButton ASIN;

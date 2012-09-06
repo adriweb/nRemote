@@ -1,13 +1,13 @@
-
 import com.ti.et.education.commproxy.INodeID;
 import com.ti.et.education.commproxy.INodeInfo;
-import java.util.LinkedList;
-import javax.swing.ImageIcon;
+
+import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
+import java.util.LinkedList;
 
 /*
  * To change this template, choose Tools | Templates
@@ -15,11 +15,11 @@ import javax.swing.table.TableModel;
  */
 
 /**
- *
  * @author Levak
  */
 public class DeviceSelectionFrame extends javax.swing.JFrame {
     private INodeID[] selectedItems;
+
     /**
      * Creates new form DeviceSelectionFrame
      */
@@ -31,9 +31,9 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
         this.DeviceList.getModel().addTableModelListener(new TableModelListener() {
             @Override
             public void tableChanged(TableModelEvent e) {
-                if(e.getColumn() == 0) {
+                if (e.getColumn() == 0) {
                     updateSelectedItems();
-                } else if(e.getColumn() == 1) {
+                } else if (e.getColumn() == 1) {
                     System.out.println(DeviceList.getValueAt(e.getFirstRow(), e.getColumn()));
                 }
                 nk.updateFields();
@@ -69,26 +69,26 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
         Panel.setLayout(new javax.swing.BoxLayout(Panel, javax.swing.BoxLayout.Y_AXIS));
 
         DeviceList.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][]{
 
-            },
-            new String [] {
-                "", "Device Name", "SID", "Version"
-            }
+                },
+                new String[]{
+                        "", "Device Name", "SID", "Version"
+                }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            Class[] types = new Class[]{
+                    java.lang.Boolean.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
             };
-            boolean[] canEdit = new boolean [] {
-                true, true, false, false
+            boolean[] canEdit = new boolean[]{
+                    true, true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         DeviceList.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
@@ -97,12 +97,12 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout devicesLayout = new javax.swing.GroupLayout(devices);
         devices.setLayout(devicesLayout);
         devicesLayout.setHorizontalGroup(
-            devicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                devicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
         );
         devicesLayout.setVerticalGroup(
-            devicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                devicesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
         );
 
         Panel.add(devices);
@@ -140,16 +140,16 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout toolsLayout = new javax.swing.GroupLayout(tools);
         tools.setLayout(toolsLayout);
         toolsLayout.setHorizontalGroup(
-            toolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(toolsLayout.createSequentialGroup()
-                .addComponent(left, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
-                .addComponent(right, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                toolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(toolsLayout.createSequentialGroup()
+                                .addComponent(left, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                                .addComponent(right, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         toolsLayout.setVerticalGroup(
-            toolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(left, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(right, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                toolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(left, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(right, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Panel.add(tools);
@@ -157,12 +157,12 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,86 +173,86 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_OKActionPerformed
 
     private void ALLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALLActionPerformed
-        DefaultTableModel model = (DefaultTableModel)this.DeviceList.getModel();
+        DefaultTableModel model = (DefaultTableModel) this.DeviceList.getModel();
         int n = model.getRowCount();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             model.setValueAt(true, i, 0);
         }
     }//GEN-LAST:event_ALLActionPerformed
 
     private void NONEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NONEActionPerformed
-        DefaultTableModel model = (DefaultTableModel)this.DeviceList.getModel();
+        DefaultTableModel model = (DefaultTableModel) this.DeviceList.getModel();
         int n = model.getRowCount();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             model.setValueAt(false, i, 0);
         }
     }//GEN-LAST:event_NONEActionPerformed
 
     public void removeAllItems() {
-        DefaultTableModel model = (DefaultTableModel)this.DeviceList.getModel();
+        DefaultTableModel model = (DefaultTableModel) this.DeviceList.getModel();
         int n = model.getRowCount();
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             model.removeRow(0);
         }
-        this.selectedItems = new INodeID[] {};
+        this.selectedItems = new INodeID[]{};
     }
-    
+
     public TableModel getModel() {
         return this.DeviceList.getModel();
-    }            
-        
+    }
+
     public INodeID[] getSelectedItems() {
         return this.selectedItems;
     }
-    
+
     public void updateSelectedItems() {
         LinkedList<INodeID> list = new LinkedList<INodeID>();
         TableModel model = this.DeviceList.getModel();
         int n = model.getRowCount();
-        for(int i = 0; i < n; i++) {
-            if(((Boolean) model.getValueAt(i, 0))) {
-                list.add( ((CalcItem)model.getValueAt(i, 2)).nodeID);
+        for (int i = 0; i < n; i++) {
+            if (((Boolean) model.getValueAt(i, 0))) {
+                list.add(((CalcItem) model.getValueAt(i, 2)).nodeID);
             }
         }
         this.selectedItems = new INodeID[list.size()];
         list.toArray(this.selectedItems);
-    } 
-    
+    }
+
     public void updateItems() {
         INodeID[] tab = Remote.theCalcs;
-        DefaultTableModel model = (DefaultTableModel)this.DeviceList.getModel();
-        for(int i = 0; i < model.getRowCount(); i ++) {
+        DefaultTableModel model = (DefaultTableModel) this.DeviceList.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
             boolean isPresent = false;
-            for(int j = 0; j < tab.length; j++) {
-                if(((CalcItem)model.getValueAt(i, 2)).nodeID.equals(tab[j])) {
+            for (int j = 0; j < tab.length; j++) {
+                if (((CalcItem) model.getValueAt(i, 2)).nodeID.equals(tab[j])) {
                     isPresent = true;
                     break;
                 }
             }
-            if(!isPresent) {
+            if (!isPresent) {
                 model.removeRow(i);
             }
         }
-        for(int j = 0; j < tab.length; j++) {
+        for (int j = 0; j < tab.length; j++) {
             boolean isPresent = false;
-            for(int i = 0; i < model.getRowCount(); i ++) {
-                if(((CalcItem)model.getValueAt(i, 2)).nodeID.equals(tab[j])) {
+            for (int i = 0; i < model.getRowCount(); i++) {
+                if (((CalcItem) model.getValueAt(i, 2)).nodeID.equals(tab[j])) {
                     isPresent = true;
                     break;
                 }
             }
-            if(!isPresent) {
+            if (!isPresent) {
                 INodeInfo info = Remote.getDeviceInfo(tab[j]);
-                model.addRow(new Object[] {
-                    true, 
-                    info.getName(),
-                    new CalcItem(tab[j]),
-                    info.getVersion()
+                model.addRow(new Object[]{
+                        true,
+                        info.getName(),
+                        new CalcItem(tab[j]),
+                        info.getVersion()
                 });
             }
         }
         updateSelectedItems();
-     }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ALL;

@@ -6,7 +6,6 @@
 import javax.swing.*;
 
 /**
- *
  * @author Levak and Adriweb
  */
 public class nRemote {
@@ -48,22 +47,21 @@ public class nRemote {
         k.setVisible(true);
         try {
             Remote.Initialize();
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error. Launch a Nspire Computer Software first (See readme)");
             System.exit(0);
         }
         k.RefreshSreen();
-        
+
         int last_number = 0;
-        while(true) {
+        while (true) {
             int number = Remote.getNumberOfDevices();
-            if(number != last_number) {
+            if (number != last_number) {
                 k.updateDeviceList();
                 k.updateFields();
                 last_number = number;
             } else {
-                if(number > 0) {
+                if (number > 0) {
                     k.RefreshSreen();
                     Thread.sleep(200);
                 } else {
