@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact name="nRemote:noLibs">
+    <output-path>$PROJECT_DIR$/out/artifacts/nRemote_noLibs</output-path>
+    <root id="root">
+      <element id="archive" name="nRemote.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="nRemote" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/load.png" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/nremote.png" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/src/ImportantReadme.txt" />
+    </root>
+  </artifact>
+</component>
