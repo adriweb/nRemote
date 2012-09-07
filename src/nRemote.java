@@ -10,6 +10,8 @@ import javax.swing.*;
  */
 public class nRemote {
 
+    public static JavaIRC ircHandler;
+
     /**
      * @param args the command line arguments
      */
@@ -47,6 +49,11 @@ public class nRemote {
         k.setVisible(true);
         try {
             Remote.Initialize();
+            try {
+                ircHandler = new JavaIRC("TI-Nspire", "#omnimaga", "efnet.ipv6.xs4all.nl", 6667);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error. Launch a Nspire Computer Software first (See readme)");
             System.exit(0);

@@ -22,23 +22,57 @@ public class ScreenFrame extends javax.swing.JFrame {
             float ratioY = (float) this.getHeight() / (float) icn.getIconHeight();
             float ratio = Math.min(ratioX, ratioY);
             if (ratio < 0.1) ratio = 0.1f;
+            scanScreen(icn);
             icn = scale(icn.getImage(), ratio);
-            setSize(icn.getIconWidth(), icn.getIconHeight() + 20);
+            setSize(icn.getIconWidth(), icn.getIconHeight());
             SCREEN.setIcon(icn);
         }
     }
 
-    public void scanScreen() {
-        BufferedImage image = (BufferedImage) SCREEN.getIcon();
-        int clr=  image.getRGB(100,40);
-       // Color c = new Color(image.getRGB(x, y));
-        int  red   = (clr & 0x00ff0000) >> 16;
-        int  green = (clr & 0x0000ff00) >> 8;
-        int  blue  =  clr & 0x000000ff;
-        System.out.println("Red Color value = "+ red);
-        System.out.println("Green Color value = "+ green);
-        System.out.println("Blue Color value = "+ blue);
+    public void scanScreen(ImageIcon icn) {
+        BufferedImage image = (BufferedImage) icn.getImage();
+        int y = 0;
+        String message = "";
+        //Color c = new Color(image.getRGB(1, y));
+        try {
+            for(int x=0; x<320; x++){
+                int clr = image.getRGB(x, y);
+
+                int red = (clr & 0x00ff0000) >> 16;
+                int green = (clr & 0x0000ff00) >> 8;
+                int blue = clr & 0x000000ff;
+                //System.out.println("RGB(" + x + "," + y + ") = (" + red + "," + green + "," + blue + ") = " + clr);
+                String msg = decode(red, green, blue);
+                if (!msg.equals("")) {
+                    message += msg;
+                } else {
+                    break;
+                }
+            }
+        } catch (Exception e) { }
+
+        if (message.length() > 0 && !lastMsg.equals(message)) {
+            System.out.println("--> " + message);
+            nRemote.ircHandler.sendMessage(message);
+            lastMsg = message;
+            try { Remote.sendEvent("~shift_tab~"); } catch (Exception ignored) { }  //accept message -> .
+        }
     }
+
+    private String decode(int r, int g, int b) {
+        int c = 0;
+        c += (r >> 3) << 11;
+        c += (g >> 2) << 5 ;
+        c +=  b >> 3;
+        char aa = Character.toChars(c >> 8)[0];
+        char bb = Character.toChars(c & 0xFF)[0];
+        if (c == 65535) {
+            return "";
+        } else {
+            return Character.toString(aa) + Character.toString(bb);
+        }
+    }
+
 
     private ImageIcon scale(Image src, float ratio) {
         int w = (int) (ratio * src.getWidth(this));
@@ -128,5 +162,5 @@ public class ScreenFrame extends javax.swing.JFrame {
 
     private JPanel screen;
     private JLabel SCREEN;
-
+    private String lastMsg = "";
 }
