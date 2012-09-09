@@ -112,7 +112,7 @@ public class Remote {
                     if (status == 1) {
                         byte[] keyEvent = {0, 0, 0, 0, (byte) (key.getEventType() & 0xFF), 2, (byte) (keyBytesCode[0] & 0xFF), 0, (byte) (keyBytesCode[1] & 0xFF), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, (byte) (keyBytesCode[2] & 0xFF), 0};
                         status = NavNet.write(ch, keyEvent, keyEvent.length);
-                        Thread.sleep(60L);
+                        Thread.sleep(80L);
                     }
                     NavNet.disconnect(ch);
                 }

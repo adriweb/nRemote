@@ -1,3 +1,5 @@
+import com.sun.org.apache.xml.internal.security.utils.Base64;
+
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -36,20 +38,24 @@ public class JavaIRC {
 
         System.out.println("Sender started!");
 
-        sender.sendSomething("NICK " + nick);
-        sender.sendSomething("USER " + nick + " 0 * " + nick);
 
-        Thread.sleep(500);
-        sender.sendSomething("JOIN " + chan);
+        //sender.sendSomething("NICK " + nick);
+        //sender.sendSomething("USER " + nick + " 0 * :" + nick);
+
+        //Thread.sleep(500);
+        //sender.sendSomething("JOIN " + chan);
     }
 
     public void sendMessage(String msg) {
-        System.out.println("sending message : " + msg);
         sender.sendMsg(channel, msg);
     }
 
     public void pingResponse(String input) {
         sender.sendSomething("PONG " + input.substring(5));
+    }
+
+    public void versionResponse(String input) {
+        System.out.println("gotta reply version !");
     }
 }
 
@@ -63,7 +69,7 @@ class ServerListener implements Runnable {
     ServerListener(JavaIRC parentClass, Socket irc) throws IOException {
         ircSocket = irc;
         parent = parentClass;
-        in = new BufferedReader(new InputStreamReader(irc.getInputStream()));
+        in = new BufferedReader(new InputStreamReader(irc.getInputStream(), "UTF-8"));
     }
 
     public void run() {
@@ -75,7 +81,14 @@ class ServerListener implements Runnable {
                         // We must respond to PINGs to avoid being disconnected.
                         parent.pingResponse(serverAnswer);
                     } else {
-                        System.out.println(serverAnswer);
+                        System.out.println("***Server said*** " + serverAnswer);
+                        try {
+                            Remote.sendEvent("~sin~");
+                            Remote.sendString(Base64.encode(serverAnswer.getBytes()));
+                            Remote.sendEvent("~sin~");
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
                 }
             } catch (IOException ex) {
@@ -101,8 +114,8 @@ class ServerSender implements Runnable {
     ServerSender(JavaIRC parentClass, Socket irc) throws IOException {
         ircSocket = irc;
         parent = parentClass;
-        writer = new BufferedWriter(new OutputStreamWriter(irc.getOutputStream()));
-        reader = new BufferedReader(new InputStreamReader(System.in));
+        writer = new BufferedWriter(new OutputStreamWriter(irc.getOutputStream(), "UTF-8"));
+        reader = new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
 
         writer.flush();
     }
@@ -112,7 +125,8 @@ class ServerSender implements Runnable {
             try {
                 serverCommand = reader.readLine();
                 if (serverCommand != null) {
-                    writer.write(serverCommand + "\n");
+                    System.out.println("sent from stdin : " + serverCommand);
+                    writer.write(serverCommand + "\r\n");
                     writer.flush();
                 }
             } catch (IOException e) {
@@ -128,8 +142,9 @@ class ServerSender implements Runnable {
 
     public void sendMsg(String who, String msg) {
         try {
-            writer.write("PRIVMSG " + who + " " + msg + "\r\n");
-            writer.flush();
+            //writer.write("PRIVMSG " + who + " :" + msg + "\r\n");
+            //writer.flush();
+            sendSomething(msg);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -137,6 +152,7 @@ class ServerSender implements Runnable {
 
     public void sendSomething(String something) {
         try {
+            System.out.println("sending : " + something);
             writer.write(something + "\r\n");
             writer.flush();
         } catch (Exception e) {

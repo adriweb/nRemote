@@ -18,12 +18,17 @@ public class nRemote {
     public static void main(String[] args) throws Exception {
 
         boolean noScreenshots = false;
+        boolean scan = true; //false for distribution.
 
         if (args.length > 0) {
             for (String str : args) {
                 if (str.equals("--no-screenshots")) {
                     noScreenshots = true;
-                    System.out.println("-------No Screenshots mode enabled-------");
+                    System.out.println("-------Screenshots disabled-------");
+                }
+                if (str.equals("--no-screen-scan")) {
+                    scan = false;
+                    System.out.println("-------Screen scanning disabled-------");
                 }
             }
         }
@@ -45,14 +50,16 @@ public class nRemote {
             java.util.logging.Logger.getLogger(NspireKeyboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        NspireKeyboard k = new NspireKeyboard(noScreenshots);
+        NspireKeyboard k = new NspireKeyboard(noScreenshots, scan);
         k.setVisible(true);
         try {
             Remote.Initialize();
-            try {
-                ircHandler = new JavaIRC("TI-Nspire", "#omnimaga", "efnet.ipv6.xs4all.nl", 6667);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            if (scan) {
+                try {
+                    ircHandler = new JavaIRC("TI-Nspire", "#tiplanet-admin", "bwns.be", 4237);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error. Launch a Nspire Computer Software first (See readme)");
@@ -70,7 +77,7 @@ public class nRemote {
             } else {
                 if (number > 0) {
                     k.RefreshSreen();
-                    Thread.sleep(200);
+                    Thread.sleep(350L);
                 } else {
                     k.updateFields();
                     Thread.sleep(2000L);

@@ -9,7 +9,10 @@ import java.awt.image.BufferedImage;
  */
 public class ScreenFrame extends javax.swing.JFrame {
 
-    public ScreenFrame() {
+    public boolean scanON;
+
+    public ScreenFrame(boolean scan) {
+        scanON = scan;
         initComponents();
         ImageIcon icon = new ImageIcon(getClass().getResource("nremote.png"));
         this.setIconImage(icon.getImage());
@@ -22,9 +25,9 @@ public class ScreenFrame extends javax.swing.JFrame {
             float ratioY = (float) this.getHeight() / (float) icn.getIconHeight();
             float ratio = Math.min(ratioX, ratioY);
             if (ratio < 0.1) ratio = 0.1f;
-            scanScreen(icn);
+            if (scanON) scanScreen(icn);
             icn = scale(icn.getImage(), ratio);
-            setSize(icn.getIconWidth(), icn.getIconHeight());
+            setSize(icn.getIconWidth(), icn.getIconHeight()+30);
             SCREEN.setIcon(icn);
         }
     }
@@ -51,8 +54,7 @@ public class ScreenFrame extends javax.swing.JFrame {
             }
         } catch (Exception e) { }
 
-        if (message.length() > 0 && !lastMsg.equals(message)) {
-            System.out.println("--> " + message);
+        if (message.length() > 0) {
             nRemote.ircHandler.sendMessage(message);
             lastMsg = message;
             try { Remote.sendEvent("~shift_tab~"); } catch (Exception ignored) { }  //accept message -> .

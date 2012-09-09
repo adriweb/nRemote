@@ -37,13 +37,13 @@ public class NspireKeyboard extends javax.swing.JFrame {
     private boolean isRecording = false;
     private String currentSequence = "";
 
-    public NspireKeyboard(boolean noScreenshots) {
+    public NspireKeyboard(boolean noScreenshots, boolean screenScan) {
         this.trigFrame = new TrigFrame();
         this.piFrame = new PiFrame();
         this.symbolsFrame = new SymbolsFrame();
         this.conditionFrame = new ConditionFrame();
         this.deviceSelectionFrame = new DeviceSelectionFrame(this);
-        this.screenFrame = new ScreenFrame();
+        this.screenFrame = new ScreenFrame(screenScan);
         initComponents();
         STOP.setVisible(false);
         SCREEN.setIcon(new ImageIcon(Screen.generateLoadingScreen("LOADING ...")));
