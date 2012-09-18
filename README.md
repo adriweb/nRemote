@@ -11,7 +11,9 @@ http://tiplanet.org
 #I - About : 
 -----------
 nRemote is a Java program designed to remote control one or multiple TI-Nspire handhelds when connected to your PC or Mac, whether directly via USB, or via the Navigator Wireless system.
+
 nRemote also features sequence recording and playing in order to easily execute a set of key presses.
+
 nRemote can be used for educational purpose in order to synchronise every student's handheld state or by showing a demonstration for a program...
 
 ![Overall preview](http://i.imgur.com/IhVB1.jpg)
@@ -20,10 +22,10 @@ nRemote can be used for educational purpose in order to synchronise every studen
 ---------------------
 1. Install Java JRE 1.6 (or later) if your system doesn't have it already.
 2. You may have installed any 3.2 version of TI-Nspire Computer Software, Navigator or not, Teacher or Student does not matter. (Computer Link 3.2 should work but is less recommanded) before using nRemote. This in fact restrains the usage of nRemote to PC and Mac users only. Linux users may find workarounds with WINE.
-3. * PC : 
+3. For Windows : 
 Copy and paste the file "nRemote.jar" to the folder that contains your TI-Nspire family computer software (for example in C:\Program Files (x86)\TI Education\TI-Nspire CAS Teacher Software\).
 
-   * Mac :
+For Mac :
 Copy and paste the file "nRemote.jar" to the Resources folder inside of your TI-Nspire family computer software. (Right-click on Nspire app, click "Show folder Contents" and open the Contents\Resources\ folder).
 
 
@@ -31,11 +33,13 @@ Copy and paste the file "nRemote.jar" to the Resources folder inside of your TI-
 ------------------
  * PC :
     1) *Launch your TI-Nspire family computer software 3.2 FIRST*
+
     2) Open "nRemote.jar"
 	
  * Mac : Just open "nRemote.jar"
 
 For any platform, you may also try to launch it via terminal ("java -jar [path_to_the_fodler]/nRemote.jar")
+
 It can be interesting to create a shortcut of "nRemote.jar" anywhere you want.
 
 
@@ -43,16 +47,21 @@ It can be interesting to create a shortcut of "nRemote.jar" anywhere you want.
 -----------------
 * PC :
     Q1: nRemote is stuck on "FAILED TO INITIALIZE" and TI-Nspire Computer Software can't see my handhelds !
+
     R1: It appears you launched nRemote before launching TI-Nspire Computer Software. This leads to a strange behavior and can be resolved either by going to the Task Manager and killing java.exe/javaw.exe and TI-Nspire Computer Software, or by restarting Windows in extreme cases.
 
 * Mac :
     Q2: The GUI may look flat with red dots.
+
     R2: There may be a Java version conflict (1.6/1.7). Open a Terminal window, try "java -jar [the nRemote.jar full path]".
 
 * General :
     Q3: nRemote says (in its title) that one (or more) device is connected, but there is none.
-	R3: Wait a little bit or use the refresh option in TI-Nspire Computer Software in order to manually remove or add handhelds from the global communication system. For example, the Navigator Wireless System has a window where you can see the connected devices. There, press the Refresh Button.
+
+    R3: Wait a little bit or use the refresh option in TI-Nspire Computer Software in order to manually remove or add handhelds from the global communication system. For example, the Navigator Wireless System has a window where you can see the connected devices. There, press the Refresh Button.
+    
     Q4 : Some keys don't work.
+    
     R4: Well, some keys like exp() don't work and we don't know yet how to solve that. It's not directly a bug related to nRemote.
 
 
