@@ -121,6 +121,55 @@ public class Remote {
         return status;
     }
 
+    public static void sendCharFromByte(byte number) throws Exception {
+        byte[] theBytes = {number, 0, 0};
+        sendKeyBytes(theBytes);
+    }
+
+    public static void sendKeyBytesFromString(String str) throws Exception {
+        byte[] theBytes = {0, 0, 0};
+        for (byte b : str.getBytes()) {
+            theBytes[0] = b;
+            sendKeyBytes(theBytes);
+        }
+    }
+
+    public static void sendKeyBytes(byte[] keyBytesCode) throws Exception {
+        NodeHandle hdl;
+        if (theCalcs == null) {
+            System.out.println("No calc(s) to send key bytes to.");
+            return;
+        }
+        for (INodeID nodeID : theCalcs) {
+            hdl = nncp.getHandle(nodeID);
+            sendKeyBytesToNode(hdl, keyBytesCode);
+            // sleep needed ? I don't have enough calcs to test a classroom setup....
+        }
+    }
+
+    public static int sendKeyBytesToNode(NodeHandle calcHandle, byte[] keyBytesCode)
+            throws Exception {
+        int status = 0;
+        if (calcHandle != null) {
+            if (keyBytesCode != null) {
+                ConnectionHandle ch = new ConnectionHandle();
+                status = NavNet.connect(calcHandle, 16450, ch);
+
+                if (status == 1) {
+                    status = NavNet.write(ch, NspireVirtualKeyStroke.VIRTUAL_KEY_STROKE_EVENT_COMMAND, NspireVirtualKeyStroke.VIRTUAL_KEY_STROKE_EVENT_COMMAND.length);
+
+                    if (status == 1) {
+                        byte[] keyEvent = {0, 0, 0, 0, 8, 2, (byte) (keyBytesCode[0] & 0xFF), 0, (byte) (keyBytesCode[1] & 0xFF), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, (byte) (keyBytesCode[2] & 0xFF), 0};
+                        status = NavNet.write(ch, keyEvent, keyEvent.length);
+                        Thread.sleep(85L);
+                    }
+                    NavNet.disconnect(ch);
+                }
+            }
+        }
+        return status;
+    }
+
     public static void sendFile(INodeID nodeID, String computerPath, String calcPath)
             throws Exception {
         if (nodeID != null)

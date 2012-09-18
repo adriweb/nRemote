@@ -1,5 +1,3 @@
-import com.sun.org.apache.xml.internal.security.utils.Base64;
-
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -69,7 +67,7 @@ class ServerListener implements Runnable {
     ServerListener(JavaIRC parentClass, Socket irc) throws IOException {
         ircSocket = irc;
         parent = parentClass;
-        in = new BufferedReader(new InputStreamReader(irc.getInputStream(), "UTF-8"));
+        in = new BufferedReader(new InputStreamReader(irc.getInputStream(), "latin1"));
     }
 
     public void run() {
@@ -83,16 +81,14 @@ class ServerListener implements Runnable {
                     } else {
                         System.out.println("***Server said*** " + serverAnswer);
                         try {
-                            Remote.sendEvent("~sin~");
-                            Remote.sendString(Base64.encode(serverAnswer.getBytes()));
-                            Remote.sendEvent("~sin~");
+                            WebComm.encodeAndSend(serverAnswer);
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
                         }
                     }
                 }
             } catch (IOException ex) {
-                System.out.println("-------------Can't read line...");
+                System.out.println("-------------Can't read line..." + ex.getMessage());
             }
             try {
                 Thread.sleep(20);
@@ -101,6 +97,9 @@ class ServerListener implements Runnable {
             }
         }
     }
+
+
+
 }
 
 class ServerSender implements Runnable {

@@ -5,7 +5,9 @@
       <root url="file://$PROJECT_DIR$/src/lib" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/WolframAlphaJavaLibrary/Source" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/src/lib" recursive="false" />
   </library>
 </component>

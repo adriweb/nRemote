@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 /**
  * @author Adriweb
  */
+
 public class ScreenFrame extends javax.swing.JFrame {
 
     public boolean scanON;
@@ -27,7 +28,7 @@ public class ScreenFrame extends javax.swing.JFrame {
             if (ratio < 0.1) ratio = 0.1f;
             if (scanON) scanScreen(icn);
             icn = scale(icn.getImage(), ratio);
-            setSize(icn.getIconWidth(), icn.getIconHeight()+30);
+            setSize(icn.getIconWidth(), icn.getIconHeight() + 30);
             SCREEN.setIcon(icn);
         }
     }
@@ -36,15 +37,14 @@ public class ScreenFrame extends javax.swing.JFrame {
         BufferedImage image = (BufferedImage) icn.getImage();
         int y = 0;
         String message = "";
-        //Color c = new Color(image.getRGB(1, y));
         try {
-            for(int x=0; x<320; x++){
+            for (int x = 0; x < 320; x++) {
                 int clr = image.getRGB(x, y);
 
                 int red = (clr & 0x00ff0000) >> 16;
                 int green = (clr & 0x0000ff00) >> 8;
                 int blue = clr & 0x000000ff;
-                //System.out.println("RGB(" + x + "," + y + ") = (" + red + "," + green + "," + blue + ") = " + clr);
+                //System.out.println("RGB(" + x + "," + y + ") = (" + red + "," + green + "," + blue + "). " + String.format("%x", clr));
                 String msg = decode(red, green, blue);
                 if (!msg.equals("")) {
                     message += msg;
@@ -52,20 +52,32 @@ public class ScreenFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (Exception e) { }
+
+        } catch (Exception ignored) {
+        }
 
         if (message.length() > 0) {
-            nRemote.ircHandler.sendMessage(message);
-            lastMsg = message;
-            try { Remote.sendEvent("~shift_tab~"); } catch (Exception ignored) { }  //accept message -> .
+            try {
+                //nRemote.ircHandler.sendMessage(message);
+                //WolframAlphaAPI.askWA(message);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                return;
+            }
+
+            try {
+                Remote.sendEvent("~shift_tab~");  //accept message -> .
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
     private String decode(int r, int g, int b) {
         int c = 0;
         c += (r >> 3) << 11;
-        c += (g >> 2) << 5 ;
-        c +=  b >> 3;
+        c += (g >> 2) << 5;
+        c += b >> 3;
         char aa = Character.toChars(c >> 8)[0];
         char bb = Character.toChars(c & 0xFF)[0];
         if (c == 65535) {
@@ -74,7 +86,6 @@ public class ScreenFrame extends javax.swing.JFrame {
             return Character.toString(aa) + Character.toString(bb);
         }
     }
-
 
     private ImageIcon scale(Image src, float ratio) {
         int w = (int) (ratio * src.getWidth(this));
@@ -87,7 +98,6 @@ public class ScreenFrame extends javax.swing.JFrame {
         return new ImageIcon(dst);
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
         setSize(new java.awt.Dimension(320, 240));
 
@@ -164,5 +174,4 @@ public class ScreenFrame extends javax.swing.JFrame {
 
     private JPanel screen;
     private JLabel SCREEN;
-    private String lastMsg = "";
 }

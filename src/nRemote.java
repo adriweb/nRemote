@@ -18,7 +18,7 @@ public class nRemote {
     public static void main(String[] args) throws Exception {
 
         boolean noScreenshots = false;
-        boolean scan = true; //false for distribution.
+        boolean scan = false;
 
         if (args.length > 0) {
             for (String str : args) {
@@ -26,9 +26,9 @@ public class nRemote {
                     noScreenshots = true;
                     System.out.println("-------Screenshots disabled-------");
                 }
-                if (str.equals("--no-screen-scan")) {
-                    scan = false;
-                    System.out.println("-------Screen scanning disabled-------");
+                if (str.equals("--screen-scan")) {
+                    scan = true;
+                    System.out.println("-------Screen scanning enabled-------");
                 }
             }
         }
@@ -56,7 +56,7 @@ public class nRemote {
             Remote.Initialize();
             if (scan) {
                 try {
-                    ircHandler = new JavaIRC("TI-Nspire", "#tiplanet-admin", "bwns.be", 4237);
+                    //ircHandler = new JavaIRC("TI-Nspire", "#tiplanet-admin", "bwns.be", 4237);
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
@@ -77,7 +77,8 @@ public class nRemote {
             } else {
                 if (number > 0) {
                     k.RefreshSreen();
-                    Thread.sleep(350L);
+
+                    Thread.sleep(300L);
                 } else {
                     k.updateFields();
                     Thread.sleep(2000L);
