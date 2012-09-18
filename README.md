@@ -1,7 +1,8 @@
-nRemote v1.7 (Sept 5th, 2012)
-
+--------------------------
+nRemote v1.7b (17/09/2012)
+--------------------------
 Authors : Adriweb, Levak
-
+Thanks to Jim Bauwens for some calc<->computer protocol ([en/de]code algorithms)
 http://tiplanet.org
 
 
@@ -26,26 +27,32 @@ Copy and paste the file "nRemote.jar" to the Resources folder inside of your TI-
 
 #III - How to use :
 ------------------
- * PC : 	1. *Launch your TI-Nspire family computer software FIRST*
-		2. Open "nRemote.jar"
+ * PC :
+    1) *Launch your TI-Nspire family computer software 3.2 FIRST*
+    2) Open "nRemote.jar"
 	
- * Mac :	Open "nRemote.jar"
-		
-It can be interesting to create a shortcut of "nRemote.jar" anywhere you want
+ * Mac : Just open "nRemote.jar"
+
+For any platform, you may also try to launch it via terminal ("java -jar [path_to_the_fodler]/nRemote.jar")
+It can be interesting to create a shortcut of "nRemote.jar" anywhere you want.
 
 
 #IV - Known Issues :
 -----------------
-* PC :      Q1: nRemote is stuck on "FAILED TO INITIALIZE" and TI-Nspire Computer Software can't see my handhelds !
-		R1: It appears you launched nRemote before launching TI-Nspire Computer Software. This leads to a strange behavior and can be resolved either by going to the Task Manager and killing java.exe/javaw.exe and TI-Nspire Computer Software, or by restarting Windows in extreme cases. 
+* PC :
+    Q1: nRemote is stuck on "FAILED TO INITIALIZE" and TI-Nspire Computer Software can't see my handhelds !
+    R1: It appears you launched nRemote before launching TI-Nspire Computer Software. This leads to a strange behavior and can be resolved either by going to the Task Manager and killing java.exe/javaw.exe and TI-Nspire Computer Software, or by restarting Windows in extreme cases.
 
-* Mac : 	Q2: The GUI may look flat with red dots.
-		R2: There may be a Java version conflict (1.6/1.7). Open a Terminal window, try "java -jar [the nRemote.jar full path]".
+* Mac :
+    Q2: The GUI may look flat with red dots.
+    R2: There may be a Java version conflict (1.6/1.7). Open a Terminal window, try "java -jar [the nRemote.jar full path]".
 
-* General : Q3: nRemote says (in its title) that one (or more) device is connected, but there is none.
-		R3: Wait a little bit or use the refresh option in TI-Nspire Computer Software in order to manually remove or add handhelds from the global communication system. For example, the Navigator Wireless System has a window where you can see the connected devices. There, press the Refresh Button.
-            Q4 : Some keys don't work.
-        Q4: Well, some keys like exp() don't work and we don't know yet how to solve that. It's not directly a bug related to nRemote.
+* General :
+    Q3: nRemote says (in its title) that one (or more) device is connected, but there is none.
+	R3: Wait a little bit or use the refresh option in TI-Nspire Computer Software in order to manually remove or add handhelds from the global communication system. For example, the Navigator Wireless System has a window where you can see the connected devices. There, press the Refresh Button.
+    Q4 : Some keys don't work.
+    R4: Well, some keys like exp() don't work and we don't know yet how to solve that. It's not directly a bug related to nRemote.
+
 
 #V - Changelog :
 ----------------
@@ -60,12 +67,12 @@ It can be interesting to create a shortcut of "nRemote.jar" anywhere you want
 - v1.4 : *Public* Error msg fixed. Drag and Drop transfer any files. Calculator target(s) selection. Fixed the missing 1.6 java target flag.
 - v1.5 : *Public* Read devices selection done. Application icon added. Overall code cleaned.
 - v1.6 : *Public* Screen auto-scaling when the window is being resized.
-- v1.7 : *Public* Separate Screen Frame with good screen scaling !
+- v1.7 : *Public* Additional, separate Screen frame ; improvements. "Private" background work on two-way communication (calc<->computer) : Internet access working (tested : calc-calc and IRC chat, web browser, wolfram alpha API call)
 
 Future :
 - Internal Sequence Editor
-- Internet control (to allow some kind of remote internet assistance)
-- Getting keypresses from the handheld to the computer ?
+- Internet control (to allow some kind of remote internet assistance)  -  Could be done soon, maybe idk
+- Getting keypresses from the handheld to the computer ?  -  Done in a tricky way.
 
 
 #VI - License :
