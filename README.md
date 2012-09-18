@@ -2,7 +2,9 @@
 nRemote v1.7b (17/09/2012)
 --------------------------
 Authors : Adriweb, Levak
+
 Thanks to Jim Bauwens for some calc<->computer protocol ([en/de]code algorithms)
+
 http://tiplanet.org
 
 
