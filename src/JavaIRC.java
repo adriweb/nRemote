@@ -113,8 +113,8 @@ class ServerSender implements Runnable {
     ServerSender(JavaIRC parentClass, Socket irc) throws IOException {
         ircSocket = irc;
         parent = parentClass;
-        writer = new BufferedWriter(new OutputStreamWriter(irc.getOutputStream(), "UTF-8"));
-        reader = new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
+        writer = new BufferedWriter(new OutputStreamWriter(irc.getOutputStream(), "latin1"));
+        reader = new BufferedReader(new InputStreamReader(System.in, "latin1"));
 
         writer.flush();
     }
