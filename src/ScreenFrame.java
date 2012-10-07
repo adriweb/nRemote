@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.HierarchyBoundsListener;
 import java.awt.event.HierarchyEvent;
 import java.awt.image.BufferedImage;
@@ -22,14 +24,19 @@ public class ScreenFrame extends javax.swing.JFrame {
 
     public void setScreenImage(ImageIcon icn) {
         if (icn != null) {
-            float ratioX = (float) this.getWidth() / (float) icn.getIconWidth();
-            float ratioY = (float) this.getHeight() / (float) icn.getIconHeight();
+            float ratioX = (float) SCREEN.getWidth() / (float) icn.getIconWidth();
+            float ratioY = (float) SCREEN.getHeight() / (float) icn.getIconHeight();
             float ratio = Math.min(ratioX, ratioY);
             if (ratio < 0.1) ratio = 0.1f;
             if (scanON) scanScreen(icn);
             icn = scale(icn.getImage(), ratio);
-            setSize(icn.getIconWidth(), icn.getIconHeight() + 30);
+            screen.setSize(icn.getIconWidth(), icn.getIconHeight());
             SCREEN.setIcon(icn);
+            if (getWidth() < 340 || getHeight() < 290) {
+                setSize(340, 290);
+                screen.setSize(320, 240);
+                SCREEN.setSize(320, 240);
+            }
         }
     }
 
@@ -99,7 +106,7 @@ public class ScreenFrame extends javax.swing.JFrame {
     }
 
     private void initComponents() {
-        setSize(new java.awt.Dimension(320, 240));
+        setSize(new java.awt.Dimension(340, 275));
 
         screen = new JPanel();
         SCREEN = new JLabel();
@@ -126,8 +133,14 @@ public class ScreenFrame extends javax.swing.JFrame {
 
             @Override
             public void ancestorResized(HierarchyEvent e) {
-                screen.setSize(getWidth(), getHeight());
-                SCREEN.setSize(getWidth(), getHeight());
+                //setSize(getWidth(), getWidth()*240/320);   // meh, ratio.
+                if (getWidth() < 340 || getHeight() < 290) {
+                    setSize(340, 290);
+                    screen.setSize(320, 240);
+                    SCREEN.setSize(320, 240);
+                }
+                screen.setSize(getWidth()-20, getHeight()-20);
+                SCREEN.setSize(getWidth()-20, getHeight()-20);
             }
         });
 
