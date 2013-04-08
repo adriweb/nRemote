@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.awt.event.HierarchyBoundsListener;
 import java.awt.event.HierarchyEvent;
 import java.awt.image.BufferedImage;
@@ -42,6 +40,7 @@ public class ScreenFrame extends javax.swing.JFrame {
 
     public void scanScreen(ImageIcon icn) {
         BufferedImage image = (BufferedImage) icn.getImage();
+
         int y = 0;
         String message = "";
         try {
@@ -65,7 +64,8 @@ public class ScreenFrame extends javax.swing.JFrame {
 
         if (message.length() > 0) {
             try {
-                //nRemote.ircHandler.sendMessage(message);
+                System.out.println("decoded message is : " + message);
+                //Remote.ircHandler.sendMessage(message);
                 //WolframAlphaAPI.askWA(message);
             } catch (Exception e) {
                 System.out.println(e.getMessage());

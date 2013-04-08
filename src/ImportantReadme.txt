@@ -1,5 +1,5 @@
 --------------------------
-nRemote v1.7b (17/09/2012)
+nRemote v1.7.1b (08/04/2013)
 --------------------------
 Authors : Adriweb, Levak
 Thanks to Jim Bauwens for some calc<->computer protocol ([en/de]code algorithms)
@@ -75,6 +75,7 @@ V - Changelog :
 - v1.5 : *Public* Read devices selection done. Application icon added. Overall code cleaned.
 - v1.6 : *Public* Screen auto-scaling when the window is being resized.
 - v1.7 : *Public* Additional, separate Screen frame ; improvements. "Private" background work on two-way communication (calc<->computer) : Internet access working (tested : calc-calc and IRC chat, web browser, wolfram alpha API call)
+- v1.7.1 : *Public* Fixed the always-focused window.
 
 Future :
 - Internal Sequence Editor

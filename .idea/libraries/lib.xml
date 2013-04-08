@@ -3,11 +3,13 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/src/lib" />
       <root url="file://$PROJECT_DIR$/src/lib" />
+      <root url="file://C:/Program Files (x86)/TI Education/TI-Nspire Teacher Software 3.2/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$USER_HOME$/Downloads/WolframAlphaJavaLibrary/Source" />
+      <root url="file://$USER_HOME$/AppData/Local/Temp/intellijad" />
     </SOURCES>
+    <jarDirectory url="file://C:/Program Files (x86)/TI Education/TI-Nspire Teacher Software 3.2/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/src/lib" recursive="false" />
   </library>
 </component>

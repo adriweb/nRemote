@@ -1,4 +1,5 @@
 // Adriweb - 16/09/2012
+// Jim's encoding.
 
 public class WebComm {
 

@@ -19,7 +19,7 @@ import java.util.Calendar;
  */
 
 /**
- * @author Levak
+ * @author Levak && Adriweb
  */
 public class NspireKeyboard extends javax.swing.JFrame {
 
@@ -2694,7 +2694,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
 
         if (icn != null) {
             this.screenFrame.setScreenImage(icn);
-            setVisible(true);
+            //setVisible(true);
             //this.toFront();
             icn = scale(icn.getImage(), this.getWidth() / 335f);
             screen.setSize(getWidth(), icn.getIconHeight());
