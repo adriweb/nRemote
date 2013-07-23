@@ -4,7 +4,7 @@
  * Date: 14/08/12 (first build)
  * Date: 20/08/12 (v1.1)
  * Date: 21/08/12 (v1.2 and v1.3)
- * Date: 22/03/12 (v1.4)
+ * Date: 22/03/13 (v1.4)
  */
 
 import com.ti.eps.navnet.ConnectionHandle;
@@ -32,11 +32,11 @@ public class Remote {
     }
 
     public static void Initialize() throws Exception {
-        System.out.println("initialize");
+        //System.out.println("initialize");
         nncp = NavNetCommProxy.init(tmpDir, "", 1);
-        System.out.println("nncp inited");
+        //System.out.println("nncp inited");
         nncp = NavNetCommProxy.getInstance();
-        System.out.println("nncp instanced");
+        //System.out.println("nncp instanced");
         Thread.sleep(1000);
         connect();
     }
@@ -48,11 +48,7 @@ public class Remote {
     }
 
     static int getNumberOfDevices() {
-        if (nncp != null) {
-            return nncp.getConnectedNodes().length;
-        } else {
-            return 0;
-        }
+        return (nncp != null) ? nncp.getConnectedNodes().length : 0;
     }
 
     static INodeInfo getDeviceInfo(INodeID nodeID) {

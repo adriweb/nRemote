@@ -76,14 +76,8 @@ public class NspireKeyboard extends javax.swing.JFrame {
 
                         for (File file : files) {
                             String destPath = file.getName() + (file.getName().endsWith(".tns") ? "" : ".tns");
-                            if (ALL.isSelected()) {
-                                for (INodeID nodeID : Remote.theCalcs) {
-                                    Remote.sendFile(nodeID, file.getPath(), destPath);
-                                }
-                            } else {
-                                for (INodeID nodeID : getSelectedDevices()) {
-                                    Remote.sendFile(nodeID, file.getPath(), destPath);
-                                }
+                            for (INodeID nodeID : (ALL.isSelected() ? Remote.theCalcs : getSelectedDevices())) {
+                                Remote.sendFile(nodeID, file.getPath(), destPath);
                             }
                         }
                     }
@@ -2232,7 +2226,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
 
         tiplanet.setForeground(new java.awt.Color(255, 255, 255));
         tiplanet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tiplanet.setText("Adriweb, Levak © 2012  -  http://tiplanet.org  -  v1.7");
+        tiplanet.setText("Adriweb, Levak © 2012  -  http://tiplanet.org  -  v1.7.1c");
         tiplanet.setFocusable(false);
         bottom.add(tiplanet);
 
@@ -2719,9 +2713,8 @@ public class NspireKeyboard extends javax.swing.JFrame {
     public void updateDeviceList() {
         try {
             Remote.connect();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
-        ;
         if (Remote.theCalcs == null) {
             return;
         }

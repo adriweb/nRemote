@@ -77,7 +77,6 @@ public class nRemote {
             } else {
                 if (number > 0) {
                     k.RefreshSreen();
-
                     Thread.sleep(300L);
                 } else {
                     k.updateFields();

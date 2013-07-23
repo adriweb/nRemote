@@ -40,7 +40,7 @@ III - How to use :
 	
  * Mac : Just open "nRemote.jar"
 
-For any platform, you may also try to launch it via terminal ("java -jar [path_to_the_fodler]/nRemote.jar")
+For any platform, you may also try to launch it via terminal ("java -jar [path_to_the_folder]/nRemote.jar")
 It can be interesting to create a shortcut of "nRemote.jar" anywhere you want.
 
 
@@ -76,6 +76,7 @@ V - Changelog :
 - v1.6 : *Public* Screen auto-scaling when the window is being resized.
 - v1.7 : *Public* Additional, separate Screen frame ; improvements. "Private" background work on two-way communication (calc<->computer) : Internet access working (tested : calc-calc and IRC chat, web browser, wolfram alpha API call)
 - v1.7.1 : *Public* Fixed the always-focused window.
+- v1.7.1c : *Public* Cleaned some prints, rebuilt (I hope) for 1.6, finally the changed version number in the window
 
 Future :
 - Internal Sequence Editor
