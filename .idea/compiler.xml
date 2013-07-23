@@ -20,10 +20,13 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="nRemote" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="false" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.6" />
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-source 1.6 -target 1.6" />
   </component>
 </project>
 

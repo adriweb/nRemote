@@ -1,5 +1,5 @@
 --------------------------
-nRemote v1.7.1b (08/04/2013)
+nRemote v1.7.1c (23/07/2013)
 --------------------------
 Authors : Adriweb, Levak
 Thanks to Jim Bauwens for some calc<->computer protocol ([en/de]code algorithms)
