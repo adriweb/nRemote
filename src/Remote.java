@@ -33,7 +33,7 @@ public class Remote {
 
     public static void Initialize() throws Exception {
         //System.out.println("initialize");
-        nncp = NavNetCommProxy.init(tmpDir, "", 1);
+        nncp = NavNetCommProxy.init(null, tmpDir.getPath(), 0, 0, "", "");
         //System.out.println("nncp inited");
         nncp = NavNetCommProxy.getInstance();
         //System.out.println("nncp instanced");

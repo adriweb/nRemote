@@ -247,7 +247,7 @@ public class DeviceSelectionFrame extends javax.swing.JFrame {
                         true,
                         info.getName(),
                         new CalcItem(tab[j]),
-                        info.getVersion()
+                        info.getNodeSWVersionsInfo().getVersion()
                 });
             }
         }
