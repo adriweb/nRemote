@@ -3,13 +3,17 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/src/lib" />
       <root url="file://$PROJECT_DIR$/src/lib" />
-      <root url="file://C:/Program Files (x86)/TI Education/TI-Nspire Teacher Software 3.2/lib" />
+      <root url="file:///Applications/TI-Nspire CAS Teacher Software 3.9.App/Contents/Java" />
     </CLASSES>
     <JAVADOC />
+    <NATIVE>
+      <root url="file:///Applications/TI-Nspire CAS Teacher Software 3.9.App/Contents/Java" />
+    </NATIVE>
     <SOURCES>
-      <root url="file://$USER_HOME$/AppData/Local/Temp/intellijad" />
+      <root url="file:///Applications/TI-Nspire CAS Teacher Software 3.9.App/Contents/Java" />
     </SOURCES>
-    <jarDirectory url="file://C:/Program Files (x86)/TI Education/TI-Nspire Teacher Software 3.2/lib" recursive="false" />
+    <jarDirectory url="file:///Applications/TI-Nspire CAS Teacher Software 3.9.App/Contents/Java" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/src/lib" recursive="false" />
+    <jarDirectory url="file:///Applications/TI-Nspire CAS Teacher Software 3.9.App/Contents/Java" recursive="false" type="SOURCES" />
   </library>
 </component>
