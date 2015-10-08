@@ -1,17 +1,17 @@
 --------------------------
-nRemote v1.8.0a (March 21st, 2015)
+nRemote v1.8.1a (October 8th, 2015)
 --------------------------
 Authors : Adriweb, Levak
 Thanks to Jim Bauwens for some calc<->computer protocol ([en/de]code algorithms)
 http://tiplanet.org
 
 
-I   - About
-II  - How to install
-III - How to use
-IV  - Known bugs
-V   - Changelog
-VI  - License
+I   - About 
+II  - How to install 
+III - How to use 
+IV  - Known bugs 
+V   - Changelog 
+VI  - License 
 
 
 #I - About :
@@ -28,6 +28,7 @@ nRemote can be used for educational purpose in order to synchronise every studen
 2. You may have installed any 3.6/3.9 version of TI-Nspire Computer Software (Navigator or not, Teacher or Student does not matter) before using nRemote. This in fact restrains the usage of nRemote to PC and Mac users only. Linux users may find workarounds with WINE.
 3. Browse to the fodler where TI-Nspire family computer software is installed (for example in C:\Program Files (x86)\TI Education\TI-Nspire CAS Teacher Software\  ;  use "Show package Contents" on Mac)), and go inside where the Java files are ("Java" folder inside, probably).
 4. Copy and paste the file "nRemote.jar" there, with all the other TI .jar files.
+Note: It's possible that the software refuses to launch with that new file in there. If so, just launch the software first then put it there once it has opened correctly.
 
 
 #III - How to use :
