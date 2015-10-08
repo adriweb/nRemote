@@ -55,7 +55,7 @@ It can be interesting to create a shortcut of "nRemote.jar" anywhere you want.
     Q4 : Some keys don't work.  
     A4: Well, some keys like exp() don't work and we don't know yet how to solve that. It's not directly a bug related to nRemote.  
     Q5 : Screen doesn't show in v1.8.0a  
-    A5: Indeed... not sure why. Will fix later.
+    A5: Indeed... Update to 1.8.1a.
 
 
 #V - Changelog :
@@ -75,6 +75,7 @@ It can be interesting to create a shortcut of "nRemote.jar" anywhere you want.
 - v1.7.1 : *Public* Fixed the always-focused window.
 - v1.7.1c : *Public* Cleaned some prints, rebuilt (I hope) for 1.6, finally the changed version number in the window
 - v1.8.0a : *Public* Quickly made it compatible with 3.6/3.9 (not compatible with older versions anymore). Not tested on Windows. Real-time screen seems broken, not sure why.
+- v1.8.1a : *Public* Fixed Real-time screen (TI had encapsulated the screen object).
 
 Future :
 - Internal Sequence Editor  

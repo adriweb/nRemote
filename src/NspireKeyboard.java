@@ -2226,7 +2226,7 @@ public class NspireKeyboard extends javax.swing.JFrame {
 
         tiplanet.setForeground(new java.awt.Color(255, 255, 255));
         tiplanet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tiplanet.setText("Adriweb, Levak © 2012-2015 - tiplanet.org - v1.8.0a");
+        tiplanet.setText("Adriweb, Levak © 2012-2015 - tiplanet.org - v1.8.1a");
         tiplanet.setFocusable(false);
         bottom.add(tiplanet);
 

@@ -14,7 +14,7 @@ import com.ti.et.education.commproxy.IEvent;
 import com.ti.et.education.commproxy.INodeID;
 import com.ti.et.education.commproxy.INodeInfo;
 import com.ti.et.education.commproxy.NspireVirtualKeyStroke;
-import com.ti.et.navnetcommproxy.NavNetCommProxy;
+import com.ti.et.navnetcommproxy.*;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -60,11 +60,21 @@ public class Remote {
     }
 
     static BufferedImage getScreen(INodeID nodeID) {
+        Object screen = null;
         try {
-            return (BufferedImage) nncp.getScreen(nodeID, true);
+            screen = nncp.getScreen(nodeID, true);
         } catch (Exception e) {
-            return null;
+            e.printStackTrace();
         }
+        if (screen instanceof BufferedImage)
+        {
+            return (BufferedImage)screen;
+        } else {
+            if (screen != null) {
+                return (BufferedImage)((NavNetNodeScreen) screen).getScreen();
+            }
+        }
+        return null;
     }
 
     public static void sendEvent(String keyStr, INodeID nodeID) throws Exception {

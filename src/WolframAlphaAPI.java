@@ -28,6 +28,8 @@
 *       java -classpath .:* AlphaAPISample "sin x"
 */
 
+/*
+
 import com.wolfram.alpha.*;
 
 public class WolframAlphaAPI {
@@ -117,3 +119,5 @@ public class WolframAlphaAPI {
         System.out.println("-----------WA func exit");
     }
 }
+
+*/
